@@ -1,0 +1,7 @@
+﻿  Boid.cpp
+F:\AIE\AIE YEAR 2\3. Complex Game Systems\Assessments\Essential\2. Demonstrate Application\C++ Multithreaded manager\Multithreading Manager\Multithreading Manager\Boid.h(34,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Boid.cpp')
+  
+F:\AIE\AIE YEAR 2\3. Complex Game Systems\Assessments\Essential\2. Demonstrate Application\C++ Multithreaded manager\Multithreading Manager\Multithreading Manager\Boid.cpp(64,63): warning C4305: '-=': truncation from 'double' to 'float'
+F:\AIE\AIE YEAR 2\3. Complex Game Systems\Assessments\Essential\2. Demonstrate Application\C++ Multithreaded manager\Multithreading Manager\Multithreading Manager\Boid.cpp(65,64): warning C4305: '+=': truncation from 'double' to 'float'
+  Multithreading Manager.vcxproj -> F:\AIE\AIE YEAR 2\3. Complex Game Systems\Assessments\Essential\2. Demonstrate Application\C++ Multithreaded manager\Multithreading Manager\x64\Debug\Multithreading Manager.exe

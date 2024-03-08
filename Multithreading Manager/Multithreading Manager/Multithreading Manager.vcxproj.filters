@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="OpenGL">
+      <UniqueIdentifier>{d9a63ca1-ec51-4057-bdff-43b22896b6cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gizmos">
+      <UniqueIdentifier>{317a6876-4d82-4afd-ad54-dc0cd32b2867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{fba44291-000a-4fee-987d-b9fb5d47676c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Multi-Threading">
+      <UniqueIdentifier>{40a93dc7-24ee-4725-83c6-23e9f434b53b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Simulation">
+      <UniqueIdentifier>{ccb83770-38ff-41f1-96e0-f2d68788b94b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MT Logger">
+      <UniqueIdentifier>{a4c01927-3afd-4d88-9592-f6c8d68f2236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering2D">
+      <UniqueIdentifier>{a0fcf53b-35ec-40aa-962c-5d8bfd36e98e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gl_core_4_4.c">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Gizmos.cpp">
+      <Filter>Gizmos</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="SimApp.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="MTManager.cpp">
+      <Filter>Multi-Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Boid.cpp">
+      <Filter>Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer2D.cpp">
+      <Filter>Rendering2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Rendering2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Rendering2D</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gl_core_4_4.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Gizmos.h">
+      <Filter>Gizmos</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="SimApp.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="MTManager.h">
+      <Filter>Multi-Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Boid.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="MTLogger.h">
+      <Filter>MT Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Rendering2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer2D.h">
+      <Filter>Rendering2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Rendering2D</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
