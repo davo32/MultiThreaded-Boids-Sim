@@ -139,28 +139,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Boid.cpp" />
-    <ClCompile Include="Font.cpp" />
-    <ClCompile Include="Gizmos.cpp" />
-    <ClCompile Include="gl_core_4_4.c" />
-    <ClCompile Include="MTManager.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Renderer2D.cpp" />
-    <ClCompile Include="SimApp.cpp" />
-    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Application\Application\Application.cpp" />
+    <ClCompile Include="Application\MultiThreading\MTLogger.cpp" />
+    <ClCompile Include="Application\Simulation\Boids\Boid.cpp" />
+    <ClCompile Include="Application\Dependencies\Font.cpp" />
+    <ClCompile Include="Application\Dependencies\Gizmos.cpp" />
+    <ClCompile Include="Application\Dependencies\gl_core_4_4.c" />
+    <ClCompile Include="Application\MultiThreading\MTManager.cpp" />
+    <ClCompile Include="Application\Application\main.cpp" />
+    <ClCompile Include="Application\Dependencies\Renderer2D.cpp" />
+    <ClCompile Include="Application\Application\SimApp\SimApp.cpp" />
+    <ClCompile Include="Application\Dependencies\Texture.cpp" />
+    <ClCompile Include="Application\Simulation\BoidsManager\BoidManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="Boid.h" />
-    <ClInclude Include="Font.h" />
-    <ClInclude Include="Gizmos.h" />
-    <ClInclude Include="gl_core_4_4.h" />
-    <ClInclude Include="MTLogger.h" />
-    <ClInclude Include="MTManager.h" />
-    <ClInclude Include="Renderer2D.h" />
-    <ClInclude Include="SimApp.h" />
-    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Application\Application\Application.h" />
+    <ClInclude Include="Application\Simulation\Boids\Boid.h" />
+    <ClInclude Include="Application\Dependencies\Font.h" />
+    <ClInclude Include="Application\Dependencies\Gizmos.h" />
+    <ClInclude Include="Application\Dependencies\gl_core_4_4.h" />
+    <ClInclude Include="Application\MultiThreading\MTLogger.h" />
+    <ClInclude Include="Application\MultiThreading\MTManager.h" />
+    <ClInclude Include="Application\Dependencies\Renderer2D.h" />
+    <ClInclude Include="Application\Application\SimApp\SimApp.h" />
+    <ClInclude Include="Application\Dependencies\Texture.h" />
+    <ClInclude Include="Application\Simulation\BoidsManager\BoidManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

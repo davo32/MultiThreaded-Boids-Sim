@@ -36,67 +36,76 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Application\Application\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gl_core_4_4.c">
+    <ClCompile Include="Application\Dependencies\gl_core_4_4.c">
       <Filter>OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="Gizmos.cpp">
+    <ClCompile Include="Application\Dependencies\Gizmos.cpp">
       <Filter>Gizmos</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="Application\Application\Application.cpp">
       <Filter>App</Filter>
     </ClCompile>
-    <ClCompile Include="SimApp.cpp">
+    <ClCompile Include="Application\Application\SimApp\SimApp.cpp">
       <Filter>App</Filter>
     </ClCompile>
-    <ClCompile Include="MTManager.cpp">
+    <ClCompile Include="Application\MultiThreading\MTManager.cpp">
       <Filter>Multi-Threading</Filter>
     </ClCompile>
-    <ClCompile Include="Boid.cpp">
+    <ClCompile Include="Application\Simulation\Boids\Boid.cpp">
       <Filter>Simulation</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer2D.cpp">
+    <ClCompile Include="Application\Dependencies\Renderer2D.cpp">
       <Filter>Rendering2D</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="Application\Dependencies\Texture.cpp">
       <Filter>Rendering2D</Filter>
     </ClCompile>
-    <ClCompile Include="Font.cpp">
+    <ClCompile Include="Application\Dependencies\Font.cpp">
       <Filter>Rendering2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Simulation\BoidsManager\BoidManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\MultiThreading\MTLogger.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gl_core_4_4.h">
+    <ClInclude Include="Application\Dependencies\gl_core_4_4.h">
       <Filter>OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="Gizmos.h">
+    <ClInclude Include="Application\Dependencies\Gizmos.h">
       <Filter>Gizmos</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
+    <ClInclude Include="Application\Application\Application.h">
       <Filter>App</Filter>
     </ClInclude>
-    <ClInclude Include="SimApp.h">
+    <ClInclude Include="Application\Application\SimApp\SimApp.h">
       <Filter>App</Filter>
     </ClInclude>
-    <ClInclude Include="MTManager.h">
+    <ClInclude Include="Application\MultiThreading\MTManager.h">
       <Filter>Multi-Threading</Filter>
     </ClInclude>
-    <ClInclude Include="Boid.h">
+    <ClInclude Include="Application\Simulation\Boids\Boid.h">
       <Filter>Simulation</Filter>
     </ClInclude>
-    <ClInclude Include="MTLogger.h">
+    <ClInclude Include="Application\MultiThreading\MTLogger.h">
       <Filter>MT Logger</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
+    <ClInclude Include="Application\Dependencies\Texture.h">
       <Filter>Rendering2D</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer2D.h">
+    <ClInclude Include="Application\Dependencies\Renderer2D.h">
       <Filter>Rendering2D</Filter>
     </ClInclude>
-    <ClInclude Include="Font.h">
+    <ClInclude Include="Application\Dependencies\Font.h">
       <Filter>Rendering2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\Simulation\BoidsManager\BoidManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
