@@ -1,7 +1,8 @@
 #include "SimApp.h"
-#include "../../Dependencies/Gizmos.h"
-#include <ext.hpp>
+#include "Gizmos.h"
 #include "../../MultiThreading/MTLogger.h"
+#include <ext.hpp>
+
 
 
 bool SimApp::subStartup()
@@ -15,11 +16,10 @@ bool SimApp::subStartup()
 
 	MTManager::getInstance().AddTask([&]()
 		{
-			if (!boidManager->CreateBoids(100, 5.0f, 8.0f))
+			if (!boidManager->CreateBoids(100, 5.0f, 8.0f,getScreenDimensions()))
 			{
 				return false;
 			}
-			return false;
 		},TaskPriority::High);
 
 	return true;

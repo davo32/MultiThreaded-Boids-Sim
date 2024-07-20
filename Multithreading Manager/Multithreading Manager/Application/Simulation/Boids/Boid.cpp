@@ -1,15 +1,15 @@
 #include "Boid.h"
-#include "../../Dependencies/Gizmos.h"
+#include "Gizmos.h"
 #include <iostream>
 
 
 void Boid::Exit(Boid& boid)
 {
-    auto it = std::remove(nearbyBoids.begin(), nearbyBoids.end(), &boid);
+    /*auto it = std::remove(nearbyBoids.begin(), nearbyBoids.end(), &boid);
     if (it != nearbyBoids.end())
     {
         nearbyBoids.erase(it);
-    }
+    }*/
 }
 
 void Boid::Enter(Boid& boid)
@@ -31,18 +31,31 @@ glm::vec2 Boid::normalize(glm::vec2 vec)
 	return vec;
 }
 
+void Boid::UpdateNearbyBoids()
+{
+    nearbyBoids.clear();
+    for (Boid* boid : AllBoids)
+    {
+        float distance = std::hypot(position.x - boid->position.x, position.y - boid->position.y);
+        if (boid != this && distance < InteractionRange)
+        {
+            nearbyBoids.push_back(boid);
+        }
+    }
+}
+
 void Boid::WrapBoidPosition(glm::vec2 SD)
 {
     // Keep boid within screen bounds
     if (position.x < 0) {
-        position.x = SD.x;
+        position.x = SD.x / 2;
     }
     else if (position.x > SD.x) {
         position.x = 0;
     }
 
     if (position.y < 0) {
-        position.y = SD.y;
+        position.y = SD.y / 2;
     }
     else if (position.y > SD.y) {
         position.y = 0;
@@ -57,46 +70,68 @@ void Boid::WrapRotation()
     while (rotation < -M_PI) rotation += 2 * M_PI;
 }
 
-void Boid::BoidMovementLogic(const std::vector<Boid>& boids)
+void Boid::BoidMovementLogic()
 {
     glm::vec2 separation(0.0f, 0.0f);
     glm::vec2 alignment(0.0f, 0.0f);
     glm::vec2 cohesion(0.0f, 0.0f);
-    int boidCount = boids.size();
+    //int boidCount = boids.size();
+    int neighborCount = nearbyBoids.size();
 
-    for (const auto& boid : boids) {
-        float distance = std::hypot(position.x - boid.position.x, position.y - boid.position.y);
-        if (&boid != this && distance < InteractionRange) {
+    for (Boid* boid : nearbyBoids) {
+        float distance = std::hypot(position.x - boid->position.x, position.y - boid->position.y);
+        if (boid != this && distance < InteractionRange) {
             if (distance < SEPARATION_DISTANCE) {
-                separation += position - boid.position;
+                separation += position - boid->position;
             }
-            alignment += boid.velocity;
-            cohesion += boid.position;
+            alignment += boid->velocity;
+            cohesion += boid->position;
+            neighborCount++;
         }
     }
 
-    if (boidCount > 0)
+    if (neighborCount > 0)
     {
-        separation /= static_cast<float>(boidCount);
+        separation /= static_cast<float>(neighborCount);
         separation = normalize(separation) * MAX_SPEED;
-        alignment /= static_cast<float>(boidCount);
+        alignment /= static_cast<float>(neighborCount);
         alignment = normalize(alignment) * MAX_SPEED;
-        cohesion /= static_cast<float>(boidCount);
+        cohesion /= static_cast<float>(neighborCount);
         cohesion = normalize(cohesion) * MAX_SPEED;
+
+        /*separation /= static_cast<float>(neighborCount);
+        alignment /= static_cast<float>(neighborCount);
+        cohesion /= static_cast<float>(neighborCount);*/
+
+        cohesion -= position;
     }
 
     velocity += separation * SEPARATION_FACTOR + alignment * ALIGNMENT_FACTOR + cohesion * COHESION_FACTOR;
-    if (glm::length(velocity) > MAX_SPEED) {
+    
+    if (glm::length(velocity) > MAX_SPEED) 
+    {
         velocity = normalize(velocity) * MAX_SPEED;
     }
     position += velocity;
+
 }
 
-void Boid::Update(const std::vector<Boid>& boids,glm::vec2 SD)
+Boid::Boid(float X, float Y, std::vector<Boid*> allBoids) : rotation(0.0f), angularVelocity(0.0f), maxRotationSpeed(0.0f)
 {
-    BoidMovementLogic(boids);
+    AllBoids = allBoids;
+    position = glm::vec2(X, Y);
+
+
+    float angle = static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 2 * M_PI;
+    velocity = glm::vec2(std::cos(angle), std::sin(angle)) * MAX_SPEED;
+}
+
+void Boid::Update(glm::vec2 SD)
+{
+    UpdateNearbyBoids();
+    BoidMovementLogic();
     WrapRotation();
-    WrapBoidPosition(SD);
+    //WrapBoidPosition(SD);
 }
 
 void Boid::Draw(aie::Renderer2D* render)
@@ -107,7 +142,7 @@ void Boid::Draw(aie::Renderer2D* render)
 
 glm::vec2 Boid::getPosition()
 {
-    return glm::vec2();
+    return position;
 }
 
 /*

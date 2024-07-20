@@ -3,8 +3,8 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <vector>
-#include "../../Dependencies/Renderer2D.h"
-#include "../../Dependencies/Texture.h"
+#include "Renderer2D.h"
+#include "Texture.h"
 #include <iostream>
 
 #ifndef M_PI
@@ -32,23 +32,10 @@ public:
 	float maxRotationSpeed;
 	static constexpr float InteractionRange = 30.0f;
 
-	Boid(float minX,float minY,float maxX, float maxY) : rotation(0.0f),angularVelocity(0.0f),maxRotationSpeed(0.0f)
-	{
+	Boid(float X, float Y, std::vector<Boid*> allBoids);
 
-		// Initialize random seed based on current time
-		std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
-		// Generate random position within specified range
-		float x = minX + static_cast<float>(std::rand()) / static_cast<float>(RAND_MAX) * (maxX - minX);
-		float y = minY + static_cast<float>(std::rand()) / static_cast<float>(RAND_MAX) * (maxY - minY);
-
-		position = glm::vec2(x, y);
-
-		float angle = static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * 2 * M_PI;
-		velocity = glm::vec2(std::cos(angle), std::sin(angle)) * MAX_SPEED;
-	}
-
-	void Update(const std::vector<Boid>& boids,glm::vec2 SD);
+	void Update(glm::vec2 SD);
 	void Draw(aie::Renderer2D* render);
 
 	glm::vec2 getPosition();
@@ -62,11 +49,15 @@ public:
 private:
 	glm::vec2 normalize(glm::vec2 vec);
 
+	void UpdateNearbyBoids();
+
 	void WrapBoidPosition(glm::vec2 SD);
 	void WrapRotation();
-	void BoidMovementLogic(const std::vector<Boid>& boids);
+	void BoidMovementLogic();
 
-	std::vector<const Boid*> nearbyBoids;
+	std::vector<Boid*> nearbyBoids;
+	std::vector<Boid*> AllBoids;
+
 
 	// ToDo:
 	bool IsInList(Boid& boid);

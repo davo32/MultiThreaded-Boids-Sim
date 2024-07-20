@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dep/stb/;$(SolutionDir)dep/glm/glm/;$(SolutionDir)dep/glfw/include/;$(SolutionDir)dep/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dep/stb/;$(SolutionDir)dep/glm/glm/;$(SolutionDir)dep/glfw/include/;$(SolutionDir)dep/;$(SolutionDir)Multithreading Manager/Application/Dependencies/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dep/stb/;$(SolutionDir)dep/glm/glm/;$(SolutionDir)dep/glfw/include/;$(SolutionDir)dep/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dep/stb/;$(SolutionDir)dep/glm/glm/;$(SolutionDir)dep/glfw/include/;$(SolutionDir)dep/;$(SolutionDir)Multithreading Manager/Application/Dependencies/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
