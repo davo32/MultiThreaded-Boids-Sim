@@ -1,6 +1,0 @@
-﻿  Boid.cpp
-C:\REPO\MultiThreaded-Boids-Sim\Multithreading Manager\Multithreading Manager\Application\Simulation\Boids\Boid.cpp(69,49): warning C4305: '-=': truncation from 'double' to 'float'
-C:\REPO\MultiThreaded-Boids-Sim\Multithreading Manager\Multithreading Manager\Application\Simulation\Boids\Boid.cpp(70,50): warning C4305: '+=': truncation from 'double' to 'float'
-C:\REPO\MultiThreaded-Boids-Sim\Multithreading Manager\Multithreading Manager\Application\Simulation\Boids\Boid.cpp(79,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\MultiThreaded-Boids-Sim\Multithreading Manager\Multithreading Manager\Application\Simulation\Boids\Boid.cpp(125,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Multithreading Manager.vcxproj -> C:\REPO\MultiThreaded-Boids-Sim\Multithreading Manager\x64\Debug\Multithreading Manager.exe
